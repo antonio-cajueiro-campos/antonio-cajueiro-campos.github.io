@@ -27,7 +27,7 @@ class Particle {
         }
       }
       if (closest) {
-        // colorMode(HSB);
+        colorMode(HSB);
         // stroke((i + frameCount * 2) % 360, 255, 255, 50);
         stroke(255, 100);
         line(this.pos.x, this.pos.y, closest.x, closest.y);
