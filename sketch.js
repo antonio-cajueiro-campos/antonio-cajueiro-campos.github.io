@@ -5,7 +5,7 @@ let xoff = 0;
 let yoff = 10000;
 
 function setup() {
-  createCanvas(1800, 900);
+  createCanvas(400, 900);
   for (let i = 0; i < walls.length; i++) {
     let x1 = random(width);
     let x2 = random(width);
