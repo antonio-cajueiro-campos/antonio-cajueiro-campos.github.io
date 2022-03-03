@@ -18,16 +18,24 @@ function setup() {
   walls.push(new Boundary(width, height, -1, height));
   walls.push(new Boundary(-1, height, -1, -1));
   particle = new Particle();
+  
 }
 
 function draw() {
+  let strokeColorArray = [
+    Math.floor(random(255)),
+    Math.floor(random(255)),
+    Math.floor(random(255))
+  ];
   background(0);
   for (let wall of walls) {
     wall.show();
+    wall.updateStrokeColor(strokeColorArray);
   }
   //particle.update(noise(xoff) * width, noise(yoff) * height);
   particle.update(mouseX, mouseY);
   particle.show();
+  particle.updateStrokeColor(strokeColorArray)
   particle.look(walls);
 
   xoff += 0.01;

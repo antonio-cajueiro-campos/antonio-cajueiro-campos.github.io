@@ -5,6 +5,11 @@ class Particle {
     for (let a = 0; a < 360; a += 1) {
       this.rays.push(new Ray(this.pos, radians(a)));
     }
+    this.strokeColor = [255, 255, 255];
+  }
+
+  updateStrokeColor(color) {
+    this.strokeColor = color;
   }
 
   update(x, y) {
@@ -29,7 +34,7 @@ class Particle {
       if (closest) {
         // colorMode(HSB);
         // stroke((i + frameCount * 2) % 360, 255, 255, 50);
-        stroke(255, 100);
+        stroke(...this.strokeColor, 100);
         line(this.pos.x, this.pos.y, closest.x, closest.y);
       }
     }
